@@ -1,0 +1,38 @@
+#L = [x**2 for x in range(1,11) if x!=4]
+#print(L)
+
+import random
+a = random.randint(1,10)
+#print(a, '\n')
+
+b = [random.randint(1,10) for _ in range (10)]
+#print(b, '\n')
+
+
+#Cuantas veces se repite el numero
+
+
+#for i in range (1,11):
+#    contar = 0
+ #   for x in c:
+  #      if i == x:
+   #         contar += 1
+    #print('El numero', i, 'se repite:', contar, 'veces')
+
+
+c = [random.randint(1,10) for _ in range (100)]#lista de numero aleatorios
+Frecuencias = {num: 0 for num in range (1,11)}# diccionario con 10 0s
+
+for num in c:
+    Frecuencias[num]+=1 #recuento de la frecuencia
+
+for numero, Frecuencia in Frecuencias.items():
+    print(f'El numero {num}: {Frecuencia} veces') #todo se va a converir en un string
+
+max_frecuencia = max(Frecuencias.values())
+numero_mas_repetido = [numero for numero, Frecuencia in Frecuencias.items() if Frecuencia == max_frecuencia]
+print(f'Numero(s) que mas se repite(n): {numero_mas_repetido} con un recuento de {max_frecuencia} oportunidades')
+
+min_frecuencia = min(Frecuencias.values())
+numero_menos_repetido = [numero for numero, Frecuencia in Frecuencias.items() if Frecuencia == min_frecuencia]
+print(f'Numero(s) que mas se repite(n): {numero_menos_repetido} con un recuento de {min_frecuencia} oportunidades')
